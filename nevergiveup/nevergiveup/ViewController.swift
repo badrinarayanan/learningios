@@ -11,20 +11,32 @@ import UIKit
 class ViewController: UIViewController {
 
    
-    @IBOutlet weak var email: UITextField!
-   
-    @IBOutlet weak var password: UITextField!
-    @IBAction func loginbtn(_ sender: UIButton) {
+    @IBOutlet weak var testval: UILabel!
     
-        self.email.resignFirstResponder()
-        self.password.resignFirstResponder()
     
-    }
-    //hide keyboard when touched in the background
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    
+    @IBAction func toggle(_ sender: UISegmentedControl) {
+    
+        if sender.selectedSegmentIndex == 0{
         
-        self.view.endEditing(true)
+            testval.text = "Public"
+        
+        }else{
+        
+        testval.text = "Private"
+        
+        }
+    
     }
+   
 
+    @IBAction func slider(_ sender: UISlider) {
+        
+        let sliderVal = lroundf(sender.value)
+        
+        testval.text  =
+            "\(sliderVal)"
+        
+    }
 }
 
