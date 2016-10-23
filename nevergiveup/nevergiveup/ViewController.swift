@@ -11,15 +11,19 @@ import UIKit
 class ViewController: UIViewController {
 
    
-    @IBOutlet weak var testing: UILabel!
-
+    @IBOutlet weak var email: UITextField!
    
-    @IBAction func clickme(_ sender: UIButton) {
+    @IBOutlet weak var password: UITextField!
+    @IBAction func loginbtn(_ sender: UIButton) {
+    
+        self.email.resignFirstResponder()
+        self.password.resignFirstResponder()
+    
+    }
+    //hide keyboard when touched in the background
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        
-        testing.text = sender.currentTitle
-        
-        
+        self.view.endEditing(true)
     }
 
 }
